@@ -34,6 +34,7 @@ function Letter({ letter, index, update }) {
                     spellCheck='false'
                     className='w-full outline-0 rounded bg-transparent'
                     placeholder={placeholder}
+                    autocapitalize="none"
                     type='text'
                     tabIndex={index + 1} 
                 />
