@@ -13,8 +13,9 @@ const Home: NextPage = () => {
     let stored = localStorage.getItem('skills');
     if (stored) {
       stored = JSON.parse(stored);
-      console.log(Object.keys(stored).length);
-      setPercentage(Math.floor((Object.keys(stored).length / 26) * 100));
+      if (stored) {
+        setPercentage(Math.floor((Object.keys(stored).length / 26) * 100));
+      }
     }
   }, [])
 
@@ -48,7 +49,7 @@ const Home: NextPage = () => {
         <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
           <div className='space-y-4'>
             {alphabet.map((letter, i) => (
-              <Letter key={i} letter={letter} index={i} update={(percent:Number) => {
+              <Letter key={i} letter={letter} index={i} update={(percent:any) => {
                 setPercentage(percent);
               }} />
             ))}
