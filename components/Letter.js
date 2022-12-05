@@ -31,12 +31,23 @@ function Letter({ letter, index, update }) {
                         localStorage.setItem('skills', JSON.stringify(stored));
                         update(Math.floor((Object.keys(stored).length / 26) * 100));
                     }}
+                    onKeyPress={(e) => {
+                        console.log(e);
+                        if (e.key == 'Enter') {
+                            const nextSibling = document.querySelector(
+                                `input[name=skill-${index + 1}]`
+                            );
+                            if (nextSibling !== null) {
+                                nextSibling.focus();
+                            }
+                        }
+                    }}
                     spellCheck='false'
                     className='w-full outline-0 rounded bg-transparent'
                     placeholder={placeholder}
-                    autocapitalize="none"
+                    name={`skill-${index}`}
+                    autoCapitalize="none"
                     type='text'
-                    tabIndex={index + 1} 
                 />
             </div>
         </>
