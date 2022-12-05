@@ -12,6 +12,10 @@ export default function Document() {
                 <link rel="manifest" href="/manifest/manifest.json" />
                 <link rel="apple-touch-icon" href="/manifest/icon512x512.png"></link>
                 <meta name="theme-color" content="#a5b4fb" />
+                <meta property="og:title" content="Skillphabet" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.skillphabet.com" />
+                <meta property="og:image" content="/opengraph.png" />
             </Head>
             <body>
                 <Main />
